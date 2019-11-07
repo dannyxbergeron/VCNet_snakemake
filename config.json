@@ -1,0 +1,15 @@
+{
+    "raw_files":
+    {
+        "sno_raw_file": "data/raw_data/snoRNA_filtered_1tpm_mean_matrix.tsv",
+        "other_raw_file": "data/raw_data/filtered_1tpm_mean_matrix.tsv",
+        "sno_raw_test": "data/raw_data/sno_test.tsv",
+        "other_raw_test": "data/raw_data/other_test.tsv",
+    },
+    "path":
+    {
+        "split_sno": "data/splitted_sno",
+        "split_corr": "data/splitted_corr",
+        "merged_corr": "data/merged_corr"
+    }
+}
