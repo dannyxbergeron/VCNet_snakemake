@@ -14,9 +14,11 @@ rule split_sno:
     conda:
         "envs/pandas.yaml"
     output:
-        expand(
-            os.path.join(config["path"]["split_sno"], "sno_{num}.tsv"),
-            num=num_split
+        temp(
+            expand(
+                os.path.join(config["path"]["split_sno"], "sno_{num}.tsv"),
+                num=num_split
+            )
         )
     script:
         "scripts/split.py"
@@ -26,7 +28,9 @@ rule vcnet:
         sno_files = os.path.join(config["path"]["split_sno"], "sno_{num}.tsv"),
         other_file = config["raw_files"]["other_raw_file"]
     output:
-        os.path.join(config["path"]["split_corr"], "sno_corr_{num}.tsv")
+        temp(
+                os.path.join(config["path"]["split_corr"], "sno_corr_{num}.tsv")
+            )
     conda:
         "envs/r.yaml"
     shell:
